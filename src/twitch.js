@@ -1,32 +1,20 @@
-/* MUTATIONOBSERVER (Doesn't work) (() => {
-    const pointChestContainer = document.querySelector(`[data-test-selector=community-points-summary`);
 
-    if(!pointChestContainer) return;
+function showChatMessage(message)
+{
+    const msg = document.createElement("div");
 
+    msg.innerHTML = `<span color="red"><b>Twitch Channel Points Collector</b></span>: ${message}`;
 
-    const pointsObserver = new MutationObserver((mutations, observer) => {
-        alert('Points!');
+    document.getElementsByClassName("chat-scrollable-area__message-container")[0].append(msg);
+}
 
-        pointChestContainer.childNodes[1].childNodes[0].childNodes[0].childNodes[0].childNodes[0].click();
-    });
+setInterval(() => {
+    const bonusElement = document.getElementsByClassName("claimable-bonus__icon")[0];
 
-    pointsObserver.observe(pointChestContainer, { subtree: true, childList: true });
-})(); */
+    if(!bonusElement) return;
 
-/* Inefficient Timed Checking (works) */
-(() => {
-    setInterval(() => {
-        const pointChestContainer = document.querySelector(`[data-test-selector=community-points-summary]`);
-
-        if(!pointChestContainer) return;
-
-        try {
-            pointChestContainer.childNodes[1].childNodes[0].childNodes[0].childNodes[0].childNodes[0].click();
-            console.log("Collected a channel points chest!");
-        }catch(ex)
-        {
-            // Element not found
-        }
-        
-    }, 10000);
-})();
+    bonusElement.click();
+    showChatMessage(`<span color="red">Collected a Channel Point Chest</span>`);
+    console.log("Collected a Channel Point Chest");
+    
+}, 1000);
