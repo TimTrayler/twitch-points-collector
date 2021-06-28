@@ -3,7 +3,9 @@ function showChatMessage(message)
 {
     const msg = document.createElement("div");
 
-    msg.innerHTML = `<span color="red"><b>Twitch Channel Points Collector</b></span>: ${message}`;
+    msg.classList.add("chat-line__message");
+    msg.classList.add("tw-relative");
+    msg.innerHTML = `<span style="color:red;font-weight:bold">Twitch Channel Points Collector</span>: ${message}`;
 
     document.getElementsByClassName("chat-scrollable-area__message-container")[0].append(msg);
 }
@@ -14,7 +16,7 @@ setInterval(() => {
     if(!bonusElement) return;
 
     bonusElement.click();
-    showChatMessage(`<span color="red">Collected a Channel Point Chest</span>`);
+    showChatMessage(`<span style="color:red">Collected a Channel Point Chest</span>`);
     console.log("Collected a Channel Point Chest");
     
 }, 1000);
