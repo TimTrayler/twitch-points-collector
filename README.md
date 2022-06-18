@@ -1,7 +1,7 @@
 # Twitch Channel Points Collector
 ## Automatically collect Twitch Channel Point Chests
 
-# <a target="_blank" rel="norefferer" _href="https://addons.mozilla.org/de/firefox/addon/twitch-points-chest-collector/"><img  alt="Get it on Mozilla" width="15%" src="https://user-images.githubusercontent.com/67274738/123695554-fab8bf80-d85a-11eb-9bb3-dd402ade976d.png"></a>
+# [Get it on Mozilla Addons](https://addons.mozilla.org/en-US/firefox/addon/twitch-points-chest-collector)
 # [Download CRX](https://github.com/TimTrayler/twitch-points-collector/releases/latest/download/twitch-cpc.crx)
 
 # CRX Installation
